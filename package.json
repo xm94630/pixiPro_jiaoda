@@ -1,0 +1,30 @@
+{
+  "name": "pixipro_jiaoda",
+  "version": "1.0.0",
+  "description": "应用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xm94630/pixiPro_jiaoda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xm94630/pixiPro_jiaoda/issues"
+  },
+  "homepage": "https://github.com/xm94630/pixiPro_jiaoda#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "pixi": "^0.3.1"
+  }
+}
