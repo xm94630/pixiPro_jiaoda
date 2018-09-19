@@ -14,7 +14,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: '新交大群侠传',
-      template: 'index.html'
+      template: './src/index.html'
     })
   ]
 };
