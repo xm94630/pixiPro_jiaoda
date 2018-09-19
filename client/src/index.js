@@ -9,3 +9,4 @@ function component() {
   
 console.log(PIXI)
 document.body.appendChild(component());
+
