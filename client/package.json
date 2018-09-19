@@ -1,4 +1,7 @@
 {
+  "comment":{
+    "scripts/watch":"这个配合webpack-dev-server，才可以自动刷新"
+  },
   "name": "pixipro_jiaoda",
   "version": "1.0.0",
   "description": "应用",

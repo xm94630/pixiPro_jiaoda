@@ -8,5 +8,6 @@ function component() {
 }
   
 console.log(PIXI);
+alert(123456)
 document.body.appendChild(component());
 
