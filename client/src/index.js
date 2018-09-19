@@ -7,6 +7,6 @@ function component() {
   return element;
 }
   
-console.log(PIXI)
+console.log(PIXI);
 document.body.appendChild(component());
 
