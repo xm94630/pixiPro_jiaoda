@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
+    //polyfill:'babel-polyfill',  //如果要使用es7\es8这种，需要有这个
     main: './src/index.js'
   },
   output: {
@@ -60,4 +61,24 @@ module.exports = {
       }
     }
   }
+
+  
+  ,module: {
+    rules: [
+      //{ test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            //这里相当于之前的.babelrc 文件的配置，放到这里也行
+            presets: ['@babel/preset-env'],
+            //plugins: ["syntax-async-functions"] //使用这个es8的，不仅要有该插件，还需要有 babel-polyfill.
+          }
+        }
+      }
+    ]
+  }
+
 };

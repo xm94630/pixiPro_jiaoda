@@ -8,6 +8,8 @@ function component() {
 }
   
 console.log(PIXI);
-alert('你好')
+alert('111')
 document.body.appendChild(component());
 
+function xxx(fun){fun()}
+xxx((a)=>{return '222'})
