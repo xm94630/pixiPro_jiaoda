@@ -4,8 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    PIXI: ['PIXI'],
-    app: './src/index.js'
+    main: './src/index.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -33,11 +32,30 @@ module.exports = {
   ,optimization: {
     splitChunks: {
       cacheGroups: {
-        commons: {
-          name: 'PIXI',
-          chunks: 'initial',
-          minChunks: 2
+
+        //这个是对所有页面中都要用到的文件的打包
+        // commons: {
+        //   name: 'PIXI',
+        //   chunks: 'initial',
+        //   minChunks: 2
+        // }
+
+        //对所有的node_modules中的模块打包
+        //这样子做，可能会打包出一个非常大的包，推荐只打包核心的，必要的文件
+        //其他的可以动态加载（按需加载）
+        // commons: {
+        //   test: /[\\/]node_modules[\\/]/,
+        //   name: 'vendors',
+        //   chunks: 'all'
+        // }
+
+        //对特定的node_modules中的模块打包
+        vendor: {
+          test: /[\\/]node_modules[\\/](PIXI|lodash)[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
         }
+
       }
     }
   }

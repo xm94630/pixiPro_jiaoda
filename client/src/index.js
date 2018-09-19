@@ -8,6 +8,6 @@ function component() {
 }
   
 console.log(PIXI);
-alert(123456)
+alert('你好')
 document.body.appendChild(component());
 
