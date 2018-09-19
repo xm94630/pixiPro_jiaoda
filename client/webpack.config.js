@@ -14,7 +14,8 @@ module.exports = {
 
   //这个部分可以不写，默认就是这个
   devServer: {
-    contentBase: './dist'   
+    contentBase: './dist'  ,
+    publicPath: '/' 
   },
 
   //有了这个，如果页面中有js错误，可以有定位。
