@@ -89,13 +89,13 @@ module.exports = {
 
 
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(le|c)ss$/,
         use: [
           //根据环境选择，前者会打包到js，后者是单独的文件
           //devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           MiniCssExtractPlugin.loader, //这里采用单独文件的形式
           'css-loader',
-          'sass-loader',
+          'less-loader',
         ],
       }
 
