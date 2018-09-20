@@ -35,7 +35,7 @@ var T = {
           return fun(count);
         }else{
           if(loop){
-            yushu = count%max;
+            var yushu = count%max;
             if(yushu==0){
               return fun(max);
             }else{
@@ -68,6 +68,9 @@ var T = {
   }
 
 }
+
+
+export {T}; 
 
 
 

@@ -27,10 +27,10 @@ module.exports = {
   },
 
   //有了这个，如果页面中有js错误，可以有定位。
-  //devtool: 'inline-source-map', 
+  devtool: 'inline-source-map', 
   
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    //new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: '新交大群侠传',
       template: './src/game.html'
@@ -64,7 +64,7 @@ module.exports = {
 
         //对特定的node_modules中的模块打包
         vendor: {
-          test: /[\\/]node_modules[\\/](PIXI|lodash)[\\/]/,
+          test: /[\\/]node_modules[\\/](pixi.js|lodash)[\\/]/,
           name: 'vendor',
           chunks: 'all',
         }
