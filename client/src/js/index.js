@@ -1,5 +1,5 @@
-import './base.css';
-import './game.less';
+import '../css/base.css';
+import '../css/game.less';
 
 
 import PIXI from 'PIXI';
