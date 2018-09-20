@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: {
@@ -27,7 +30,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '新交大群侠传',
       template: './src/index.html'
-    })
+    }),
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].bundle.css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].bundle.css' : '[id].[hash].css',
+    }),
   ]
   
   //分开打包
@@ -77,7 +84,22 @@ module.exports = {
             //plugins: ["syntax-async-functions"] //使用这个es8的，不仅要有该插件，还需要有 babel-polyfill.
           }
         }
+      },
+      
+
+
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          //根据环境选择，前者会打包到js，后者是单独的文件
+          //devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader, //这里采用单独文件的形式
+          'css-loader',
+          'sass-loader',
+        ],
       }
+
+      
     ]
   }
 

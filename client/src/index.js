@@ -1,3 +1,7 @@
+import './game.css';
+import './game2.sass';
+
+
 import PIXI from 'PIXI';
 import _ from 'lodash';
 
@@ -7,9 +11,12 @@ function component() {
   return element;
 }
   
+
+
 console.log(PIXI);
-alert('111')
+
 document.body.appendChild(component());
 
 function xxx(fun){fun()}
 xxx((a)=>{return '222'})
+
