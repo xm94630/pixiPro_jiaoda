@@ -18,8 +18,12 @@ module.exports = {
 
   //这个部分可以不写，默认就是这个
   devServer: {
-    contentBase: './dist'  ,
-    publicPath: '/' 
+    port: 9000,
+    host: '0.0.0.0',
+
+    //回到整个项目的根目录下，默认访问的是我的项目首页（不管是不是以index.html命名）
+    //这样子设置方便访问demo文件夹中的参考demo
+    contentBase: path.resolve(__dirname, '../'), 
   },
 
   //有了这个，如果页面中有js错误，可以有定位。
@@ -29,7 +33,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: '新交大群侠传',
-      template: './src/index.html'
+      template: './src/game.html'
     }),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].bundle.css' : '[name].[hash].css',
