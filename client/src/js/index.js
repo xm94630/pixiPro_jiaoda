@@ -7,16 +7,19 @@ import * as PIXI from 'pixi.js'
 import './webfontloader.js';
 import {T} from './tweenFun.js';
 
+import WebFont from './webfontloader.js';
+console.log(WebFont)
+
 import {sounds,loadSound} from './lib/sound.js'
 //因为sounds的方法有对其的依赖
 //另外这个sound.js在npm库中也是有的，可惜也不是模块化的，所以就用这个吧
 window.loadSound = loadSound;
 
-// WebFont.load({
-//   custom: {
-//     families: ['Conv_monogram','Conv_Minecraftia-Regular']
-//   }
-// });
+WebFont.load({
+  custom: {
+    families: ['Conv_monogram','Conv_Minecraftia-Regular']
+  }
+});
 
 
 
@@ -169,7 +172,7 @@ window.loadSound = loadSound;
     //按钮文字1
     var btn1 = new PIXI.Text('GAME Start',{
       //fontFamily:"Conv_monogram",
-      //fontFamily:"Conv_Minecraftia-Regular",
+      fontFamily:"Conv_Minecraftia-Regular",
       fontSize:32, 
       padding:20
     });
