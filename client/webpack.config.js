@@ -113,7 +113,7 @@ module.exports = {
 
 
       ,{
-        test: require.resolve('./src/js/sound.js'),
+        test: require.resolve('./src/js/lib/sound.js'),
         use: 'exports-loader?sounds,loadSound'  
       }
 

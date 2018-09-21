@@ -7,8 +7,9 @@ import * as PIXI from 'pixi.js'
 import './webfontloader.js';
 import {T} from './tweenFun.js';
 
-import {sounds,loadSound} from './sound.js'
+import {sounds,loadSound} from './lib/sound'
 //因为sounds的方法有对其的依赖
+//另外这个sound.js在npm库中也是有的，可惜也不是模块化的，所以就用这个吧
 window.loadSound = loadSound;
 
 // WebFont.load({
