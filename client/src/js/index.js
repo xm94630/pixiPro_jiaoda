@@ -5,7 +5,7 @@ import _ from 'lodash';
 import * as PIXI from 'pixi.js'
 
 
-import {T} from './tweenFun.js';
+import T from './tool/tweenFun.js';
 
 import WebFont from './lib/webfontloader.js';
 import {sounds,loadSound} from './lib/sound.js'

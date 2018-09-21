@@ -70,7 +70,7 @@ var T = {
 }
 
 
-export {T}; 
+export default T; 
 
 
 

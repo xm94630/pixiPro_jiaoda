@@ -14,6 +14,7 @@ module.exports = {
       './src/js/lib/sound.js',
       './src/js/lib/webfontloader.js',
     ],
+    tools:'./src/js/tool/tweenFun.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -57,12 +58,19 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
 
-        //这个是对所有页面中都要用到的文件的打包
+        //对别人的公用库的打包
         libs: {
-          name: 'libs',
+          name: ['libs','tools'],
           chunks: 'initial',
           minChunks: 2
         },
+
+        //对自己的写的工具打包
+        // tools: {
+        //   name: 'tools',
+        //   chunks: 'initial',
+        //   minChunks: 2
+        // },
 
         //对所有的node_modules中的模块打包
         //这样子做，可能会打包出一个非常大的包，推荐只打包核心的，必要的文件
