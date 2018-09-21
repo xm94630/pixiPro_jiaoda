@@ -31,7 +31,7 @@ module.exports = {
   devtool: 'inline-source-map', 
   
   plugins: [
-    //new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: '新交大群侠传',
       template: './src/game.html'
