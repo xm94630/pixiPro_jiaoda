@@ -7,6 +7,10 @@ import * as PIXI from 'pixi.js'
 import './webfontloader.js';
 import {T} from './tweenFun.js';
 
+import {sounds,loadSound} from './sound.js'
+//因为sounds的方法有对其的依赖
+window.loadSound = loadSound;
+
 // WebFont.load({
 //   custom: {
 //     families: ['Conv_monogram','Conv_Minecraftia-Regular']

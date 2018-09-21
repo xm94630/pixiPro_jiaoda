@@ -111,6 +111,12 @@ module.exports = {
         ],
       }
 
+
+      ,{
+        test: require.resolve('./src/js/sound.js'),
+        use: 'exports-loader?sounds,loadSound'  
+      }
+
       
     ]
   }
