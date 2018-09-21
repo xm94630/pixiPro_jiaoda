@@ -9,7 +9,8 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   entry: {
     //polyfill:'babel-polyfill',  //如果要使用es7\es8这种，需要有这个
-    main: './src/js/index.js'
+    main: './src/js/index.js',
+    libs: './src/js/lib/sound.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -45,7 +46,6 @@ module.exports = {
       { from: 'src/img/*',   to: 'img', flatten:true},
       { from: 'src/fonts/*', to: 'fonts', flatten:true},
       { from: 'src/sounds/*', to: 'sounds', flatten:true},
-      { from: 'src/js/lib/sound.js', to: './', flatten:true},
     ], {})
   ]
   
@@ -55,11 +55,11 @@ module.exports = {
       cacheGroups: {
 
         //这个是对所有页面中都要用到的文件的打包
-        // commons: {
-        //   name: 'PIXI',
-        //   chunks: 'initial',
-        //   minChunks: 2
-        // }
+        libs: {
+          name: 'libs',
+          chunks: 'initial',
+          minChunks: 2
+        },
 
         //对所有的node_modules中的模块打包
         //这样子做，可能会打包出一个非常大的包，推荐只打包核心的，必要的文件
