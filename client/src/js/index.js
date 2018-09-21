@@ -4,13 +4,12 @@ import '../css/game.less';
 import _ from 'lodash';
 import * as PIXI from 'pixi.js'
 
-import './webfontloader.js';
+
 import {T} from './tweenFun.js';
 
-import WebFont from './webfontloader.js';
-console.log(WebFont)
-
+import WebFont from './lib/webfontloader.js';
 import {sounds,loadSound} from './lib/sound.js'
+
 //因为sounds的方法有对其的依赖
 //另外这个sound.js在npm库中也是有的，可惜也不是模块化的，所以就用这个吧
 window.loadSound = loadSound;
