@@ -9,12 +9,12 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   entry: {
     //polyfill:'babel-polyfill',  //如果要使用es7\es8这种，需要有这个
-    main: './src/js/index.js',
     tools:'./src/js/tool/tweenFun.js',
     libs: [
       './src/js/lib/sound.js',
       './src/js/lib/webfontloader.js',
     ],
+    main: './src/js/index.js',
   },
   output: {
     filename: '[name].bundle.js',
