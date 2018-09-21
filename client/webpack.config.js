@@ -10,11 +10,11 @@ module.exports = {
   entry: {
     //polyfill:'babel-polyfill',  //如果要使用es7\es8这种，需要有这个
     main: './src/js/index.js',
+    tools:'./src/js/tool/tweenFun.js',
     libs: [
       './src/js/lib/sound.js',
       './src/js/lib/webfontloader.js',
     ],
-    tools:'./src/js/tool/tweenFun.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -58,16 +58,18 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
 
-        //对别人的公用库的打包
-        libs: {
-          name: ['libs','tools'],
-          chunks: 'initial',
-          minChunks: 2
-        },
+        //我对这部分的配置还没有掌握完全
+        //下面这个注释打开，似乎会影响对tools、libs的打包，我先不研究了。
 
         //对自己的写的工具打包
         // tools: {
         //   name: 'tools',
+        //   chunks: 'initial',
+        //   minChunks: 2
+        // },
+        // //对别人的公用库的打包
+        // libs: {
+        //   name: 'libs',
         //   chunks: 'initial',
         //   minChunks: 2
         // },
