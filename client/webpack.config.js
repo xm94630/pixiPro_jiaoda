@@ -45,7 +45,7 @@ module.exports = {
       { from: 'src/img/*',   to: 'img', flatten:true},
       { from: 'src/fonts/*', to: 'fonts', flatten:true},
       { from: 'src/sounds/*', to: 'sounds', flatten:true},
-      { from: 'src/js/sound.js', to: './', flatten:true},
+      { from: 'src/js/lib/sound.js', to: './', flatten:true},
     ], {})
   ]
   
