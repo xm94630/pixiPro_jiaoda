@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== 'production'
 
@@ -39,6 +40,13 @@ module.exports = {
       filename: devMode ? '[name].bundle.css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].bundle.css' : '[id].[hash].css',
     }),
+    //拷贝
+    new CopyWebpackPlugin([
+      { from: 'src/img/*',   to: 'img', flatten:true},
+      { from: 'src/fonts/*', to: 'fonts', flatten:true},
+      { from: 'src/sounds/*', to: 'sounds', flatten:true},
+      { from: 'src/js/sound.js', to: './', flatten:true},
+    ], {})
   ]
   
   //分开打包
