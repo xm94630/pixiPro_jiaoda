@@ -440,3 +440,5 @@ WebFont.load({
   // 最后加载完成
   
   // 容器的这个cacheAsBitmap属性设置为true的话，内容的元素就会不随时间的推移而改变，换句话说，就是状态就不会再发生变化了（表现为相对静止状态）
+
+  console.log('hhhahah')

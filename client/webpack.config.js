@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
 
 const devMode = process.env.NODE_ENV !== 'production'
 
@@ -30,6 +31,8 @@ module.exports = {
     //回到整个项目的根目录下，默认访问的是我的项目首页（不管是不是以index.html命名）
     //这样子设置方便访问demo文件夹中的参考demo
     contentBase: path.resolve(__dirname, '../'), 
+
+    hot:true,
   },
 
   //有了这个，如果页面中有js错误，可以有定位。不能用，速度太慢
@@ -50,7 +53,10 @@ module.exports = {
       { from: 'src/img/*',   to: 'img', flatten:true},
       { from: 'src/fonts/*', to: 'fonts', flatten:true},
       { from: 'src/sounds/*', to: 'sounds', flatten:true},
-    ], {})
+    ], {}),
+
+    //HMR
+    new webpack.HotModuleReplacementPlugin({})
   ]
   
   //分开打包
