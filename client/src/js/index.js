@@ -84,7 +84,10 @@ WebFont.load({
     }
   }
   resize();
-  PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+  
+  //这个已经被取缔了。以后使用 PIXI.settings.SCALE_MODE 
+  //PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+  
   app.ticker.add(function(delta) {
     myTicker(delta);
   });
@@ -441,4 +444,4 @@ WebFont.load({
   
   // 容器的这个cacheAsBitmap属性设置为true的话，内容的元素就会不随时间的推移而改变，换句话说，就是状态就不会再发生变化了（表现为相对静止状态）
 
-  console.log('hhhahah')
+  console.log('=======>')
