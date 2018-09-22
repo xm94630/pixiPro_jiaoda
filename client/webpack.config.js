@@ -20,9 +20,9 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  mode:"production",
+  mode:"development",
 
-  //这个部分可以不写，默认就是这个
+  //这个部分可以不写，默认就是这个 
   devServer: {
     port: 9000,
     host: '0.0.0.0',
@@ -32,8 +32,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, '../'), 
   },
 
-  //有了这个，如果页面中有js错误，可以有定位。
-  devtool: 'inline-source-map', 
+  //有了这个，如果页面中有js错误，可以有定位。不能用，速度太慢
+  //devtool: 'inline-source-map', 
   
   plugins: [
     new CleanWebpackPlugin(['dist']),
